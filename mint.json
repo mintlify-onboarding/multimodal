@@ -1,0 +1,54 @@
+{
+  "name": "Multimodal",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#C25C4B",
+    "light": "#EA8A7A",
+    "dark": "#A43D2C",
+    "anchors": { "from": "#EA8A7A", "to": "#A43D2C" }
+  },
+  "topbarCtaButton": {
+    "name": "Contact Us",
+    "url": "https://www.multimodal.dev/contact-us"
+  },
+  "topbarLinks": [
+    {
+      "name": "Learn More",
+      "url": "https://www.multimodal.dev/#Features"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Contact Us",
+      "icon": "mailto:hello@multimodal.dev",
+      "url": "https://www.multimodal.dev/contact-us"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Home",
+      "pages": ["introduction", "features"]
+    },
+    {
+      "group": "API Documentation",
+      "pages": ["api-reference/authentication"]
+    },
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/update",
+        "api-reference/endpoint/delete"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "",
+    "linkedin": ""
+  }
+}
