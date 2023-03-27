@@ -8,8 +8,8 @@
   "colors": {
     "primary": "#C25C4B",
     "light": "#EA8A7A",
-    "dark": "#A43D2C",
-    "anchors": { "from": "#EA8A7A", "to": "#A43D2C" }
+    "dark": "#333333",
+    "anchors": { "from": "#D16C5C", "to": "#A43D2C" }
   },
   "topbarCtaButton": {
     "name": "Contact Us",
@@ -23,9 +23,14 @@
   ],
   "anchors": [
     {
+      "name": "API Reference",
+      "icon": "rectangle-terminal",
+      "url": "api-reference"
+    },
+    {
       "name": "Contact Us",
-      "icon": "mailto:hello@multimodal.dev",
-      "url": "https://www.multimodal.dev/contact-us"
+      "icon": "envelope",
+      "url": "mailto:hello@multimodal.dev"
     }
   ],
   "navigation": [
@@ -48,7 +53,7 @@
     }
   ],
   "footerSocials": {
-    "twitter": "",
-    "linkedin": ""
+    "twitter": "https://twitter.com/multimodalai",
+    "linkedin": "https://www.linkedin.com/company/multimodalai/"
   }
 }
