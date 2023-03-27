@@ -7,9 +7,9 @@
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#C25C4B",
-    "light": "#EA8A7A",
+    "light": "#C25C4B",
     "dark": "#333333",
-    "anchors": { "from": "#D16C5C", "to": "#A43D2C" }
+    "anchors": { "from": "#DE7968", "to": "#AE4534" }
   },
   "topbarCtaButton": {
     "name": "Contact Us",
@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Learn More",
-      "url": "https://www.multimodal.dev/#Features"
+      "url": "https://www.multimodal.dev/"
     }
   ],
   "anchors": [
