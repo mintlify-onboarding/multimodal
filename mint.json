@@ -23,11 +23,6 @@
   ],
   "anchors": [
     {
-      "name": "API Reference",
-      "icon": "rectangle-terminal",
-      "url": "api-reference"
-    },
-    {
       "name": "Contact Us",
       "icon": "envelope",
       "url": "mailto:hello@multimodal.dev"
@@ -35,21 +30,8 @@
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "features"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
-      ]
+      "group": "API Reference",
+      "pages": ["api-reference/overview", "api-reference/extract-paystub-pdf"]
     }
   ],
   "footerSocials": {

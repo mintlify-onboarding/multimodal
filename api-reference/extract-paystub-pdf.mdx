@@ -43,4 +43,30 @@ Extracts paystub information from a PDF file.
 ### Conclusion
 
 If you have any questions or need further assistance, please don't hesitate to
-contact our support team.
+contact our [support team]().
+
+### Example Request
+
+```bash
+curl --location 'https://2y31yfw1hd.execute-api.us-east-1.amazonaws.com/prod/extract-paystub-pdf' \
+--header 'x-api-key: {{api_key}}' \
+--form 'file=@"/Users/shishirkumar/Downloads/pay-stub-template-classic.pdf"'
+```
+
+### Example Response
+
+```js
+{
+  "status": "Completed",
+  "post_processing_json": {
+    "Name of Employer": "ABC Company",
+    "Which Borrower": "John Doe",
+    "Paid From Date": "06/16/2021",
+    "Paid To Date": "06/30/2021",
+    "Pay Frequency": 14,
+    "Gross Pay": "$5,000.00",
+    "YTD Earnings": "$65,000.00",
+    "Hours Worked": null
+  }
+}
+```
