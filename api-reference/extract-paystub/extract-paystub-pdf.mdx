@@ -1,0 +1,46 @@
+---
+title: "Extract Paystub PDF API"
+api: "POST /extract-paystub-pdf"
+---
+
+### Authentication
+
+To use this API, you'll need to authenticate with an API key. Please contact our
+support team to obtain an API key.
+
+<Note>
+### PDF Extraction Only
+
+This endpoint processes documents in PDF format. Please convert to PDF before
+submitting an API request.
+
+</Note>
+
+### Extract Paystub PDF Endpoint
+
+Extracts paystub information from a PDF file.
+
+### Headers
+
+<ParamField body="x-api-key" required>
+  Your API key.
+</ParamField>
+
+### Body
+
+<ParamField body="file" required>
+  The PDF file to extract paystub information from.
+</ParamField>
+
+### API Usage Limits
+
+**DEV Endpoint**
+
+- Rate: 5 requests per second
+- Burst: 10 requests
+- Quota: 100 requests per day
+
+### Conclusion
+
+If you have any questions or need further assistance, please don't hesitate to
+contact our support team.
