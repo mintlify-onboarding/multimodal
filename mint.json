@@ -5,6 +5,9 @@
     "dark": "/logo/dark.svg"
   },
   "favicon": "/favicon.png",
+  "api": {
+    "baseUrl": "https://2y31yfw1hd.execute-api.us-east-1.amazonaws.com"
+  },
   "colors": {
     "primary": "#C25C4B",
     "light": "#C25C4B",
@@ -31,7 +34,7 @@
   "navigation": [
     {
       "group": "API Reference",
-      "pages": ["api-reference/overview", "api-reference/extract-paystub-pdf"]
+      "pages": ["introduction", "api-reference/extract-paystub-pdf", "api-reference/feedback-paystub-pdf"]
     }
   ],
   "footerSocials": {

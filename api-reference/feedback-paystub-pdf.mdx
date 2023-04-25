@@ -1,0 +1,60 @@
+---
+title: 'Feedback Paystub PDF'
+description: "This is an API for Exatracting important fields from Paystub PDF using our Multimodal OCR service and Multimodal's Large Language Models."
+api: 'POST /prod/feedback-paystub-pdf'
+---
+
+### Headers
+
+<ParamField header="x-api-key" required>
+  Your API key.
+</ParamField>
+
+### Body
+
+<ParamField body="task_id" type="string">
+  The ID of the task. Example:
+  "2023-04-24-13-58-59-21d31a2d-c1c8-4340-9e4f-6ac8498a579d"
+</ParamField>
+
+<ParamField body="Name of Employer" type="string">
+  The name of the employer. Example: "ABC Company"
+</ParamField>
+
+<ParamField body="Which Borrower" type="string">
+  The name of the borrower. Example: "John Doe"
+</ParamField>
+
+<ParamField body="Paid From Date" type="string">
+  Example: "06/16/2021"
+</ParamField>
+
+<ParamField body="Paid To Date" type="string">
+  Example: "06/30/2021"
+</ParamField>
+
+<ParamField body="Pay Frequency" type="string">
+  The frequency of the payments. Example: "Biweekly"
+</ParamField>
+
+<ParamField body="Gross Pay" type="string">
+  Example: "$5,000.00"
+</ParamField>
+
+<ParamField body="YTD Earnings" type="string">
+  Year to date earnings. Example: "$65,000.00"
+</ParamField>
+
+<ParamField body="Unknown" type="string">
+  The hours worked per week. If unknown, specify "Unknown"
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+  "message": "The feedback is successfully recorded for Task ID: 2023-04-24-13-58-59-21d31a2d-c1c8-4340-9e4f-6ac8498a579d!"
+}
+```
+
+</ResponseExample>

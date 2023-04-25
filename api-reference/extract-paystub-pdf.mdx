@@ -1,7 +1,8 @@
 ---
-title: "Extract Paystub PDF API"
-description: "Extracts paystub information from a PDF file."
-api: "POST https://docs.multimodal.dev/extract-paystub-pdf"
+title: 'Extract Paystub PDF'
+description: "This is an API for Exatracting important fields from Paystub PDF using our Multimodal OCR service and Multimodal's Large Language Models."
+api: 'POST /prod/extract-paystub-pdf'
+contentType: 'multipart/form-data'
 ---
 
 <Note>
@@ -14,38 +15,33 @@ submitting an API request.
 
 ### Headers
 
-<ParamField body="x-api-key" required>
+<ParamField header="x-api-key" required>
   Your API key.
 </ParamField>
 
 ### Body
 
-<ParamField body="file" required>
+<ParamField body="file" required type="file">
   The PDF file to extract paystub information from.
 </ParamField>
 
-### Example Request
+<ResponseExample>
 
-```bash
-curl --location 'https://2y31yfw1hd.execute-api.us-east-1.amazonaws.com/prod/extract-paystub-pdf' \
---header 'x-api-key: {{api_key}}' \
---form 'file=@"/Users/shishirkumar/Downloads/pay-stub-template-classic.pdf"'
-```
-
-### Example Response
-
-```js
+```json
 {
   "status": "Completed",
-  "post_processing_json": {
+  "task_id": "2023-04-03-17-29-34-5e226374-f34d-402b-9060-e3d157f690dc",
+  "business_logic_json": {
     "Name of Employer": "ABC Company",
     "Which Borrower": "John Doe",
     "Paid From Date": "06/16/2021",
     "Paid To Date": "06/30/2021",
-    "Pay Frequency": 14,
+    "Pay Frequency": "Biweekly",
     "Gross Pay": "$5,000.00",
     "YTD Earnings": "$65,000.00",
-    "Hours Worked": null
+    "Hours Worked Per Week": "Unknown"
   }
 }
 ```
+
+</ResponseExample>

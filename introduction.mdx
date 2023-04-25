@@ -1,34 +1,133 @@
 ---
-title: Introduction
-description: "Welcome to your new Mintlify documentation. Get started making it yours."
+title: 'Introduction'
+description: 'Welcome to the Multimodal APIs. We build natural language processing for product teams.'
 ---
 
-<img src="/images/banner.png" />
+## Extract Paystub PDF API
 
-## Setting up
-The first step to world-class documentation is setting up your editing environnments. 
-<CardGroup cols={2}>
-  <Card title="Edit Your Docs" icon="pen-to-square" href="https://mintlify.com/docs/quickstart">
-    Get your docs set up quick and easy development.
-  </Card>
-  <Card title="Preview Changes" icon="image" href="https://mintlify.com/docs/development">
-    Preview your changes before you push to make sure they're perfect.
-  </Card>
-</CardGroup>
+This API provides a variety of endpoints to support text generation, text classification, text extraction, and document processing use cases.
 
-## Make it yours
-Update your docs to your brand and add valuable content for the best user conversion. 
-<CardGroup cols={2}>
-  <Card title="Customize Style" icon="palette" href="https://mintlify.com/docs/settings/global" >
-    Customize your docs to your company's colors and brands.
-  </Card>
-  <Card title="Reference APIs" icon="code" href="https://mintlify.com/docs/api-playground/openapi" >
-    Automatically generate endpoints from an OpenAPI spec.
-  </Card>
-  <Card title="Add Components" icon="screwdriver-wrench" href="https://mintlify.com/docs/components/accordion">
-    Build interactive features and designs to guide your users.
-  </Card>
-  <Card title="Get Inspiration" icon="stars" href="https://mintlify.com/showcase">
-    Check out our showcase of our favorite documentation. 
-  </Card>
-</CardGroup>
+### Authentication
+
+To use this API, you'll need to authenticate with an API key. Please contact our [support team](https://www.multimodal.dev/contact-us) to obtain an API key.
+
+Please note: This endpoint processes documents in PDF format. Please convert to PDF before submitting an API request.
+
+### Extract Paystub PDF Endpoint
+
+Extracts paystub information from a PDF file.
+
+**Endpoint**
+
+```bash
+POST /extract-paystub-pdf
+```
+
+**Headers:**
+
+<ParamField header="x-api-key" type="string" required>
+  Your API key
+</ParamField>
+
+**Body:**
+
+<ParamField body="file" required type="File">
+  The PDF file to extract paystub information from.
+</ParamField>
+
+### Response Object
+
+The response object for the `POST /extract-paystub-pdf` endpoint contains the following properties:
+
+<ResponseField name="status" type="string">
+  Indicates the status of the request. Possible values include:
+
+`Completed`: The request was completed successfully.
+`Error`: An error occurred during the request.
+
+</ResponseField>
+
+<ResponseField name="task_id" type="string">
+  A unique identifier for the task that was created to process the PDF file.
+</ResponseField>
+
+<ResponseField name="business_logic_json" type="Object">
+  Contains the extracted paystub information in a structured format.
+
+  <Expandable title="Object">
+    <ResponseField name="Name of Employer" type="string">
+      The name of the employer.
+    </ResponseField>
+    <ResponseField name="Which Borrower" type="string">
+      The name of the borrower associated with the paystub.
+    </ResponseField>
+    <ResponseField name="Paid From Date" type="string">
+      The start date of the pay period.
+    </ResponseField>
+    <ResponseField name="Paid To Date" type="string">
+      The end date of the pay period.
+    </ResponseField>
+    <ResponseField name="Pay Frequency" type="string">
+      The frequency of pay (e.g. Weekly, Biweekly, Monthly) if available, else "Unknown" .
+    </ResponseField>
+    <ResponseField name="Gross Pay" type="string">
+      The gross pay for the pay period.
+    </ResponseField>
+    <ResponseField name="YTD Earnings" type="string">
+      The year-to-date earnings.
+    </ResponseField>
+    <ResponseField name="Hours Worked Per Week" type="string">
+      The number of hours worked per week if available, else "Unknown".
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+If the request was successful, the `status` property will be `"Completed"`, and the `business_logic_json` property will contain the extracted paystub information. If an error occurred, the `status` property will be `"Error"`, and additional error information may be included in the response.
+
+### API Error Codes
+
+Here are the common error codes from the API
+
+<Tabs>
+  <Tab title="400 - Bad Request">
+    This error code is returned when the API receives an invalid request. This
+    may be due to missing or invalid parameters, or incorrect formatting of the
+    request data.
+  </Tab>
+  <Tab title="401 - Unauthorized">
+    This error code is returned when the API is unable to authenticate the user
+    making the request. This may be due to incorrect credentials or an expired
+    token.
+  </Tab>
+  <Tab title="403 - Forbidden">
+    This error code is returned when the API is unable to authorize the user
+    making the request. This may be due to insufficient permissions to access
+    the requested resource.
+  </Tab>
+  <Tab title="404 - Not Found">
+    This error code is returned when the API is unable to locate the requested
+    resource. This may be due to a typo in the resource path or the resource not
+    existing.
+  </Tab>
+  <Tab title="429 - Too Many Requests">
+    This error code is returned when the API usage limits are exceeded. This may
+    be due to too many requests being made in a short period of time.
+  </Tab>
+  <Tab title="500 - Internal Server Error">
+    This error code is returned when the API encounters an unexpected error
+    while processing the request. This may be due to a bug in the API code or a
+    failure of the underlying systems.
+  </Tab>
+</Tabs>
+
+### API Usage Limits
+
+**DEV Endpoint**
+
+Rate: 5 requests per second
+Burst: 10 requests
+Quota: 200 requests per day
+
+### Conclusion
+
+If you have any questions or need further assistance, please don't hesitate to contact our support team.
